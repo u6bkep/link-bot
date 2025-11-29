@@ -340,7 +340,7 @@ def initialize_and_run(args):
 		rules = load_config(args.config)
 
 		# Create adapter for callbacks (explicit port optional)
-		endpoint = f"tcp -h {args.ice_host}" + (f" -p {args.ice_callback_port}" if args.ice_callback_port else "")
+		endpoint = f"tcp -h {args.ice_callback_host}" + (f" -p {args.ice_callback_port}" if args.ice_callback_port else "")
 		adapter = ic.createObjectAdapterWithEndpoints("LinkBot.Client", endpoint)
 		adapter.activate()
 		logger.debug("found %d booted servers", len(booted))
@@ -452,6 +452,7 @@ def parse_args():
 	parser.add_argument('--max-message-length', type=int, default=int(os.environ.get('LINK_BOT_MAX_MESSAGE_LENGTH', '5000')),
                         help='Maximum length of incoming messages to process (default 5000)')
 	args = parser.parse_args()
+	global MAX_MESSAGE_LENGTH  # ensure we update the module-level limit
 	MAX_MESSAGE_LENGTH = args.max_message_length
 	return args
 
