@@ -1,0 +1,13 @@
+{
+  "global_strip_params": ["utm_*", "gclid", "fbclid", "mc_eid", "mc_cid", "igshid"],
+  "domains": {
+    "youtube.com": {"remove_all_params": false, "allowed_params": ["v", "t"]},
+    "youtu.be": {"remove_all_params": false, "allowed_params": ["t"]},
+    "twitter.com": {"remove_all_params": true},
+    "x.com": {"remove_all_params": true},
+    "reddit.com": {"remove_all_params": true},
+    "amazon.*": {"remove_all_params": false, "allowed_params": ["k", "s"]},
+    "amazon.com": {"remove_all_params": false, "allowed_params": ["k", "s"]},
+    "www.amazon.com": {"remove_all_params": false, "allowed_params": ["k", "s"]}
+  }
+}

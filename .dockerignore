@@ -1,0 +1,40 @@
+# Exclude VCS, caches, and common clutter from the build context
+.git
+.gitmodules
+.github
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.dist-info/
+*.egg
+
+# Build outputs
+build/
+dist/
+.cache/
+
+# Environments
+.venv/
+venv/
+.env
+*.env
+
+# Editor/OS
+.vscode/
+.idea/
+*~
+*.swp
+.DS_Store
+
+# Logs and temp
+*.log
+*.sqlite3
+*.db
+
+# Docker compose files (not needed in image context)
+docker-compose*.yml
